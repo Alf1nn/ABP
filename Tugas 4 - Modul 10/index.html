@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Implementasi AJAX JSON</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <h2>Contoh AJAX dengan JSON</h2>
+  <div id="hasil">Klik tombol untuk menampilkan data.</div>
+  <br>
+  <button type="button" id="btnTampil">Tampilkan Data</button>
+
+  <script>
+    $(document).ready(function() {
+      $("#btnTampil").click(function() {
+        $.ajax({
+          url: "data.json",
+          type: "GET",
+          dataType: "json",
+          timeout: 5000,
+          success: function(response) {
+            $("#hasil").html(
+              "<h3>" + response.judul + "</h3>" +
+              "<p>" + response.isi + "</p>" +
+              "<p><b>" + response.penutup + "</b></p>"
+            );
+          },
+          error: function(xhr, status, error) {
+            $("#hasil").html("Terjadi error: " + error);
+          },
+          complete: function() {
+            console.log("Request selesai");
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

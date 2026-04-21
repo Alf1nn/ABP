@@ -1,0 +1,5 @@
+{
+  "judul": "Implementasi AJAX Baru",
+  "isi": "Data ini diambil dari file JSON menggunakan metode $.ajax().",
+  "penutup": "Konten berhasil dimuat tanpa refresh halaman."
+}

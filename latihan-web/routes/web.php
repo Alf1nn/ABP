@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Lat1Controller;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProductController;
 
 Route::get('/lat1', [Lat1Controller::class, 'index']);
 Route::get('/lat1/m2', [Lat1Controller::class, 'method2']);
@@ -18,3 +19,10 @@ Route::post('/register', [AuthController::class, 'register']);
 
 Route::get('/home', [AuthController::class, 'home']);
 Route::get('/logout', [AuthController::class, 'logout']);
+
+
+Route::get('/', function () {
+    return redirect()->route('products.index');
+});
+
+Route::resource('products', ProductController::class);

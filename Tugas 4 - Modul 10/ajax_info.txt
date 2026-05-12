@@ -1,0 +1,3 @@
+<h1>DATA BERHASIL DIMUAT</h1>
+<p>Ini adalah contoh implementasi AJAX dengan metode $.ajax().</p>
+<p>Konten ini tampil setelah tombol diklik.</p>
